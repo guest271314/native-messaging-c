@@ -11,6 +11,7 @@
 // Parameter `inputLength`: a pointer to a single `size_t` variable. 
 // `size_t` is an unsigned integer type big enough to represent the length of any 
 // memory sequence, it's usually 8 bytes.
+//
 // Return value: a pointer to a buffer of bytes. `uint8_t` is an unsigned 8-bit 
 // integer (value range is from 0 to 255).
 uint8_t* getMessage(size_t *inputLength) {
@@ -19,13 +20,13 @@ uint8_t* getMessage(size_t *inputLength) {
   uint32_t messageLength = 0;
   // The operator `&` gives a pointer to the variable, so `fread()` writes directly
   // into `inputLength`. 
-  // `sizeof(*messageLength)` will hence return the size in bytes of the type 
-  // `message` points at, which means it's equivalent to `sizeof(uint_8)`.
   fread(&messageLength, sizeof(messageLength), 1, stdin);
   // Allocate a buffer that is 'messageLength' elements long. `calloc() and 
   // `malloc()` return a pointer to memory on the heap.
   // The operator `*` dereferences a pointer (`*message' is equivalent to 
   // `message[0]`).
+  // `sizeof(*message)` will hence return the size in bytes of the type 
+  // `message` points at, which means it's equivalent to `sizeof(uint_8)`.
   uint8_t *message = calloc(messageLength, sizeof(*message));
   fread(message, sizeof(*message), messageLength, stdin);
   // `inputLength` is a pointer, so we store the length at the memory address it 

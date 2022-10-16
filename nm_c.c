@@ -11,7 +11,6 @@
 // Parameter `inputLength`: a pointer to a single `size_t` variable. 
 // `size_t` is an unsigned integer type big enough to represent the length of any 
 // memory sequence, it's usually 8 bytes.
-//
 // Return value: a pointer to a buffer of bytes. `uint8_t` is an unsigned 8-bit 
 // integer (value range is from 0 to 255).
 uint8_t* getMessage(size_t *inputLength) {

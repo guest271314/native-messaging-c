@@ -35,8 +35,7 @@ uint8_t* getMessage(size_t *inputLength) {
   return message;
 }
 
-void sendMessage(uint8_t *response) {
-  const uint32_t responseLength = strlen(response);
+void sendMessage(uint8_t *response, int32_t responseLength) {
   fwrite(&responseLength, sizeof responseLength, 1, stdout);
   fwrite(response, responseLength, 1, stdout);
   fflush(stdout);
@@ -53,7 +52,7 @@ int main(void) {
     // example:
     // message[5] = 'a'; // Ok, pointer still points to start of message.
     // message = NULL; // Bad! Now we can't `free()` the message.
-    sendMessage(message);
+    sendMessage(message, messageLength);
     free(message);
   }
 }

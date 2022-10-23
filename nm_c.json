@@ -1,9 +1,7 @@
 {
   "name": "nm_c",
   "description": "C Native Messaging host",
-  "path": "/path/to/nm_c",
+  "path": "",
   "type": "stdio",
-  "allowed_origins": [
-     "chrome-extension://<id>/*"
-  ]
+  "allowed_origins": []
 }

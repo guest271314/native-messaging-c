@@ -9,7 +9,7 @@ Installation and usage on Chrome and Chromium
 5. Note the generated extension ID.
 6. Compile with `clang nm_c.c -o nm_c` or `gcc nm_c.c -o nm_c`.
 7. Open `nm_c.json` in a text editor, set `"path"` to absolute path of `nm_c` and `chrome-extension://<ID>/` using ID from 5 in `"allowed_origins"` array. 
-8. Copy the file to Chrome or Chromium configuration folder, e.g., Chromium on \*nix `~/.config/chromium/NativeMessagingHosts`; Chrome dev channel on \*nix `~/.config/google-chrome-unstable/NativeMessagingHosts`.
+8. Copy the `nm_c.json` file to Chrome or Chromium configuration folder, e.g., Chromium on \*nix `~/.config/chromium/NativeMessagingHosts`; Chrome dev channel on \*nix `~/.config/google-chrome-unstable/NativeMessagingHosts`.
 9. To test click `service worker` link in panel of unpacked extension which is DevTools for `background.js` in MV3 `ServiceWorker`, observe echo'ed message from Node.js Native Messaging host. To disconnect run `port.disconnect()`.
 
 The Native Messaging host echoes back the message passed. 

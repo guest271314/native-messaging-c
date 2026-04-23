@@ -7,7 +7,7 @@
 3. Click `Load unpacked`.
 4. Select `native-messaging-c` folder.
 5. Note the generated extension ID.
-6. Compile with `clang -O3 nm_c.c -o nm_c` or `gcc -O3 nm_c.c -o nm_c`. Compile to WASM wih WASI support with `/path/to/wasi-sdk/bin/clang --wasm-opt -O3 -flto nm_c.c -o nm_c.wasm`.
+6. Compile with `clang -O3 nm_c.c -o nm_c` or `gcc -O3 nm_c.c -o nm_c`. Compile to WASM wih WASI support with `/path/to/wasi-sdk/bin/clang --wasm-opt -O3 -flto nm_c.c -o nm_c_wasi.wasm`.
 7. Open `nm_c.json` in a text editor, set `"path"` to absolute path of `nm_c` and `chrome-extension://<ID>/` using ID from 5 in `"allowed_origins"` array. 
 8. Copy the `nm_c.json` file to Chrome or Chromium configuration folder, e.g., Chromium on \*nix `~/.config/chromium/NativeMessagingHosts`; Chrome dev channel on \*nix `~/.config/google-chrome-unstable/NativeMessagingHosts`.
 9. To test click `service worker` link in panel of unpacked extension which is DevTools for `background.js` in MV3 `ServiceWorker`, observe echo'ed message from Node.js Native Messaging host. To disconnect run `port.disconnect()`.
